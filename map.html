@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membuat Map dan Menentukan Lokasi</title>
+       
+    <link rel="stylesheet" href="leaflet.css">
+    <script src="leaflet.js"></script>
+    
+    <style>
+        #map { height: 500px; }
+    </style>
+</head>
+<body>
+    
+    <div id="map"></div>
+    
+    <script>
+        var map = L.map('map').setView([-8.670321, 116.260074], 10);
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map);
+
+        var masjidjami = L.marker([-8.710735, 116.279077]).addTo(map);
+        var sdn = L.marker([-8.711068, 116.279636]).addTo(map);
+        var tokoatika = L.marker([-8.710757, 116.280056]).addTo(map);
+        var polres = L.marker([-8.709170, 116.279464]).addTo(map);
+        var pondokpesantren = L.marker([-8.711609, 116.281097]).addTo(map);
+        
+        
+        
+
+        
+
+        masjidjami.bindPopup("<b>masjid</b><br>jami praya").openPopup();
+        sdn.bindPopup("<b>sdn 22</b><br>praya").openPopup();
+        tokoatika.bindPopup("<b>toko atika</b><br>toko kue").openPopup();
+        polres.bindPopup("<b>polres</b><br>polres praya").openPopup();
+        pondokpesantren.bindPopup("<b>madrasah</b><br>nurul yakin").openPopup();
+    </script>
+</body>
+</html>
+
